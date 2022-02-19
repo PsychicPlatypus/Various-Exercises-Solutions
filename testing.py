@@ -1,0 +1,1 @@
+print(ord("a".upper())-64)
