@@ -1,6 +1,3 @@
-from re import S
-
-
 class Solution(object):
     def isPalindrome(self, x):
         j = [i for i in str(x)]

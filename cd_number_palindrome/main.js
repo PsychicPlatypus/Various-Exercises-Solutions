@@ -1,5 +1,5 @@
 function palindrome(num) {
-  if ((typeof num == 'string') || (num < 0)) return "Not valid";
+  if (typeof num == "string" || num < 0) return "Not valid";
   let check_array = [];
 
   String(num)

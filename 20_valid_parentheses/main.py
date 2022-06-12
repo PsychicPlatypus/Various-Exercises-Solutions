@@ -9,7 +9,9 @@ class Solution(object):
             elif i in ")]}":
                 if len(stack) == 0:
                     return False
-                if (i == ')' and stack[-1] == '(') or (i == '}' and stack[-1] == '{') or (i == ']' and stack[-1] == '['):
+                if (i == ')' and stack[-1] == '(') or\
+                    (i == '}' and stack[-1] == '{') or\
+                    (i == ']' and stack[-1] == '['):
                     stack.pop()
                 else:
                     return False
@@ -17,4 +19,4 @@ class Solution(object):
 
 test = Solution()
 
-print(test.isValid("(]"))
+print(test.isValid("12+(3+4)+5)+3(2"))

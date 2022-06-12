@@ -39,5 +39,6 @@
             "database": "sakila",
             "username": "root"
         }
-    ]
+    ],
+    "python.formatting.provider": "black"
 }
