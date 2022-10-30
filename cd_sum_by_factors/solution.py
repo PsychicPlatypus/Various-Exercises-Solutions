@@ -45,7 +45,7 @@ def sum_for_list(lst: list) -> List:
 
     solutions = []
     for i in range(len(lst)):
-        check_primes(i)
+        sum = 0
 
     # Todo rest
 
