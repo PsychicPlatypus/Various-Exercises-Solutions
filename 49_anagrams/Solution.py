@@ -1,13 +1,23 @@
+from itertools import permutations
+
+
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        results = []
+        results, cache = [], []
         for i in strs:
-            if i[::-1] not in strs:
-                results.append([i])
-            else:
-                results.append([i, i[::-1]])
-                strs.remove(i[::-1])
-        return results
+            if i not in cache:
+                grouped_perms = []
+                all_permutations = ["".join(j) for j in permutations(i)]
+                cache.extend(all_permutations)
+                # print(all_permutations)
+
+                for j in all_permutations:
+                    if strs.__contains__(j):
+                        grouped_perms.extend([j] * strs.count(j))
+
+                results.append(grouped_perms)
+
+        return list(filter(lambda x: x != [], results))
 
 
-print(Solution().groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]))
+print(Solution().groupAnagrams(["eat", "eat", "tea", "tan", "ate", "nat", "bat"]))
