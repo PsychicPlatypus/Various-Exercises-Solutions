@@ -42,5 +42,5 @@
 	],
 	"cSpell.words": ["nums"],
 	"python.formatting.provider": "black",
-	"python.analysis.typeCheckingMode": "basic"
+	"python.analysis.typeCheckingMode": "off"
 }
