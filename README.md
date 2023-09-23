@@ -2,9 +2,9 @@
 
 This repository contains solutions from various coding task websites.
 The primary websites are:
-    - [LeetCode](https://leetcode.com/)
-    - [CodeWars](https://codewars.com/)
-    - [CSES](https://cses.fi/problemset/)
+- [LeetCode](https://leetcode.com/)
+- [CodeWars](https://codewars.com/)
+- [CSES](https://cses.fi/problemset/)
 
 Some solutions found here could be from other people.
 
