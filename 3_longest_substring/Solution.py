@@ -1,22 +1,22 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        current_longest = 0
-        current_substring = ""
+        longest = 0
+        curr_subs = set()
+        min_p = 0
 
-        for i in s:
-            print(current_substring)
-            if not i in current_substring:
-                current_substring += i
+        for max_p in range(len(s)):
+            curr_char = s[max_p]
+            if curr_char in curr_subs:
+                # Move left pointer until you delete it
+                while curr_char in curr_subs:
+                    curr_subs.remove(s[min_p])
+                    min_p += 1
+                curr_subs.add(curr_char)
             else:
-                if len(current_substring) > current_longest:
-                    current_longest = len(current_substring)
-                current_substring = i
+                curr_subs.add(curr_char)
+                longest = len(curr_subs) if len(curr_subs) > longest else longest
 
-        return (
-            current_longest
-            if current_longest > len(current_substring)
-            else len(current_substring)
-        )
+        return longest
 
 
 print(Solution().lengthOfLongestSubstring(" "))
