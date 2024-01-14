@@ -1,5 +1,36 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
+        """
+        ## 5. Longest Palindromic Substring
+
+        Given a string s, return the longest
+        palindromic
+        substring
+        in s.
+
+
+
+        ### Example 1:
+
+        ```
+        Input: s = "babad"
+        Output: "bab"
+        Explanation: "aba" is also a valid answer.
+        ```
+
+        ### Example 2:
+
+        ```
+        Input: s = "cbbd"
+        Output: "bb"
+        ```
+
+        #### Args:
+            s (str): _description_
+
+        #### Returns:
+            str: _description_
+        """
         if len(s) == 1:
             return s
         if len(s) == 2:
