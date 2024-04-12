@@ -1,23 +1,25 @@
 from itertools import permutations
+from collections import defaultdict
+
+
+"""
+Save sorted strings as keys
+"""
 
 
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
-        results, cache = [], []
-        for i in strs:
-            if i not in cache:
-                grouped_perms = []
-                all_permutations = ["".join(j) for j in permutations(i)]
-                cache.extend(all_permutations)
-                # print(all_permutations)
+        pairs = defaultdict(None)
 
-                for j in all_permutations:
-                    if strs.__contains__(j):
-                        grouped_perms.extend([j] * strs.count(j))
+        for str_ in strs:
+            sorted_str = "".join(sorted(str_))
 
-                results.append(grouped_perms)
+            try:
+                curr = pairs[sorted_str]
+                curr.append(str_)
+                pairs[sorted_str] = curr
 
-        return list(filter(lambda x: x != [], results))
+            except KeyError:
+                pairs[sorted_str] = [str_]
 
-
-print(Solution().groupAnagrams(["eat", "eat", "tea", "tan", "ate", "nat", "bat"]))
+        return pairs.values()
