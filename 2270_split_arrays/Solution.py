@@ -1,8 +1,9 @@
 from typing import List
 
+
 class Solution:
     def waysToSplitArray(self, nums: List[int]) -> int:
-        prefix_sum = [nums[0]] * len(nums) 
+        prefix_sum = [nums[0]] * len(nums)
 
         for i in range(len(nums) - 1):
             prefix_sum[i + 1] = prefix_sum[i]
@@ -17,11 +18,8 @@ class Solution:
                 res += 1
 
         return res
-        
 
 
-Solution().waysToSplitArray([1,2,3,4])
-Solution().waysToSplitArray([10,4,-8,7])
-Solution().waysToSplitArray([2,3,1,0])
-
-
+Solution().waysToSplitArray([1, 2, 3, 4])
+Solution().waysToSplitArray([10, 4, -8, 7])
+Solution().waysToSplitArray([2, 3, 1, 0])
