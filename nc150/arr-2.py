@@ -19,6 +19,14 @@ class Solution:
         return True
 
 
+class Solution:
+    def isAnagram(self, s: str, t: str):
+        if len(s) != len(t):
+            return False
+
+        return sorted(s) == sorted(t)
+
+
 solution = Solution().isAnagram
 
 print(solution("racecar", "carrace"))
