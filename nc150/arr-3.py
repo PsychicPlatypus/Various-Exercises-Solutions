@@ -9,9 +9,9 @@ class Solution:
             num_targets[target - nums[i]] = i
 
         for i in range(len(nums)):
-            num_target = num_targets.get(nums[i])
-            if num_target != None and i != num_target:
-                return [i, num_target]
+            position = num_targets.get(nums[i])
+            if position != None and i != position:
+                return [i, position]
 
 
 solution = Solution().twoSum
