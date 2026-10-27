@@ -1,4 +1,5 @@
 from typing import *
+from collections import defaultdict
 
 
 class Solution:
@@ -20,6 +21,17 @@ class Solution:
                 sorted_anagram.append(str)
 
         return list(sorted_anagrams.values())
+
+
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = defaultdict(list)
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c) - 97] += 1  # from 97, all lowercase ascii letters
+            res[tuple(count)].append(s)
+        return list(res.values())
 
 
 print(Solution().groupAnagrams(["act", "pots", "tops", "cat", "stop", "hat"]))
